@@ -162,5 +162,5 @@ function onYouTubeIframeAPIReady() {
 ```
 
 [//]: #
-   [Example1]: <https://github.com/joemccann/dillinger>
-   [Example2]: <https://github.com/joemccann/dillinger.git>
+   [Example1]: <http://fallemand.github.io/utils/youtube-embed/example1/>
+   [Example2]: <http://fallemand.github.io/utils/youtube-embed/example2/>
