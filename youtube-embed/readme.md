@@ -157,5 +157,3 @@ function onYouTubeIframeAPIReady() {
 [//]: #
    [Example1]: <https://github.com/joemccann/dillinger>
    [Example2]: <https://github.com/joemccann/dillinger.git>
-
-
