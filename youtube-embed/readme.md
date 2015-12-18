@@ -1,5 +1,5 @@
 # Youtube Video Embed
-We want to share two examples of youtube video insertion inside our webpage with a more efficient method than just insert the iframe tag.
+We want to share two examples of how to insert Youtube videos in a more efficient way than just insert the iframe tag.
 
 ### Example 1
 ##### Description
@@ -125,7 +125,7 @@ function loadVideoIframe(e) {
 
 ### Example 2
 ##### Description
-Asyc way of loading the video
+Asyc way of loading the video iframe using the [YoutubeAPI]
 
 ##### Pros
   - Will autoplay in all devices
@@ -178,3 +178,5 @@ function onYouTubeIframeAPIReady() {
 [//]: #
    [Example1]: <http://fallemand.github.io/utils/youtube-embed/example1/>
    [Example2]: <http://fallemand.github.io/utils/youtube-embed/example2/>
+   [YoutubeAPI]: <https://developers.google.com/youtube/iframe_api_reference?hl=es>
+   
