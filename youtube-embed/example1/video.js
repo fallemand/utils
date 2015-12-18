@@ -21,8 +21,8 @@ function loadVideoIframe(e) {
         iframe.setAttribute("class", "video-embed");
         iframe.setAttribute("src", "https://www.youtube.com/embed/" + this.dataset.id +"?autoplay=1");
         iframe.setAttribute("frameborder", "0");
-        iframe.setAttribute("height", this.offsetHeight);
-        iframe.setAttribute("width", this.offsetWidth);
+        iframe.setAttribute("height", this.dataset.width);
+        iframe.setAttribute("width", this.dataset.height);
         iframe.setAttribute("allowfullscreen", true);
     this.innerHTML = "";
     this.appendChild(iframe);
