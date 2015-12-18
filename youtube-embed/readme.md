@@ -7,10 +7,13 @@ Insert just an image, with the appereance of a video, and on the click event, th
 ##### Pros
   - Reduce web page load (Just 20k in our example).
   - No javascript fallback. (The image will link to the youtube video page).
+  
 ##### Cons
   - On some devices (cellphones), the video will not autostart after you click on the image, you will have to click twice.
+  
 ##### Example
 * [Example1]
+
 ##### HTML
 ```html
 <a href="https://www.youtube.com/watch?v=E1apGVPWo78" class="video video--border video--nm" style="background-image: url('http://img.youtube.com/vi/E1apGVPWo78/0.jpg');" data-id="E1apGVPWo78">
@@ -109,14 +112,18 @@ function loadVideoIframe(e) {
 ### Example 2
 ##### Description
 Asyc way of loading the video
+
 ##### Pros
   - Will autoplay in all devices
   - Will not insert image
+  
 ##### Cons
   - Will not work if no javascript
   - More page load
+  
 ##### Example
 * [Example2]
+
 ##### HTML
 ```html
 <div id="rKNeObQB_X0" class="video" data-width="450" data-height="247"></div>
