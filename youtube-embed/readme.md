@@ -6,7 +6,7 @@ We want to share two examples of youtube video insertion inside our webpage with
 Insert just an image, with the appereance of a video, and on the click event, the image will transform itself into a video.
 ##### Pros
   - Reduce web page load (Just 20k in our example).
-  - No javascript fallback. (The image will link to the youtube video page).
+  - Will work if javascript is not enabled (The image will link to the youtube video page).
   
 ##### Cons
   - On some devices (cellphones), the video will not autostart after you click on the image, you will have to click twice.
@@ -15,28 +15,41 @@ Insert just an image, with the appereance of a video, and on the click event, th
 * [Example1]
 
 ##### HTML
+Without js fallback
 ```html
-<a href="https://www.youtube.com/watch?v=E1apGVPWo78" class="video video--border video--nm" style="background-image: url('http://img.youtube.com/vi/E1apGVPWo78/0.jpg');" data-id="E1apGVPWo78">
+<div class="video" data-id="E1apGVPWo78" data-width="450" data-height="247"></div>
+```
+With js fallback
+```html
+<a href="https://www.youtube.com/watch?v=E1apGVPWo78" class="video video--border video--size-if-no-js" style="background-image: url('http://img.youtube.com/vi/E1apGVPWo78/0.jpg');" data-id="E1apGVPWo78">
     <div class="video-btn"></div>
 </a>
 ```
+
 ##### JS
 ```js
 //On page load, set the event on each video
 window.addEventListener('load', function() {
-    var videos = document.getElementsByClassName("video");
+    var videos = document.getElementsByClassName("video"),
+        button = document.createElement('div');
+    button.classList.add('video-btn');
     for (var i = 0; i < videos.length; i++) {
         videos[i].addEventListener("click", loadVideoIframe);
+        videos[i].style.backgroundImage = "url('http://img.youtube.com/vi/" + videos[i].dataset.id + "/0.jpg')";
+        videos[i].classList.add('video--border');
+        videos[i].style.width = videos[i].dataset.width + 'px';
+        videos[i].style.height = videos[i].dataset.height + 'px';
+        videos[i].innerHTML = '';
+        videos[i].appendChild(button.cloneNode());
     }
 });
 
 //Load the embed video iframe
 function loadVideoIframe(e) {
     this.removeEventListener("click");
-    this.classList.add
     var iframe = document.createElement("iframe");
         iframe.setAttribute("class", "video-embed");
-        iframe.setAttribute("src", "https://www.youtube.com/embed/" + this.dataset.id+"?autoplay=1");
+        iframe.setAttribute("src", "https://www.youtube.com/embed/" + this.dataset.id +"?autoplay=1");
         iframe.setAttribute("frameborder", "0");
         iframe.setAttribute("height", this.offsetHeight);
         iframe.setAttribute("width", this.offsetWidth);
@@ -52,6 +65,7 @@ function loadVideoIframe(e) {
 ```css
 /* Video
 ---------------------------------------------------------------*/
+
 .video,
 .video-embed {
     max-width: 100%;
@@ -103,7 +117,7 @@ function loadVideoIframe(e) {
 	border-left: 28px solid #FFF;
 }
 
-.video--nm {
+.video--size-if-no-js {
     width:450px;
     height:247px;
 }
