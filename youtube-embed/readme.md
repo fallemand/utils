@@ -15,11 +15,11 @@ Insert just an image, with the appereance of a video, and on the click event, th
 * [Example1]
 
 ##### HTML
-Without js fallback
+Without no-js fallback
 ```html
 <div class="video" data-id="E1apGVPWo78" data-width="450" data-height="247"></div>
 ```
-With js fallback
+With no-js fallback
 ```html
 <a href="https://www.youtube.com/watch?v=E1apGVPWo78" class="video video--border video--size-if-no-js" style="background-image: url('http://img.youtube.com/vi/E1apGVPWo78/0.jpg');" data-id="E1apGVPWo78">
     <div class="video-btn"></div>
