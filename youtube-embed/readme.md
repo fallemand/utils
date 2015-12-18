@@ -133,7 +133,7 @@ Asyc way of loading the video iframe using the [YoutubeAPI]
   
 ##### Cons
   - Will not work if no javascript
-  - More page load
+  - More resources are loaded on the page load (520k in our example)
   
 ##### Example
 * [Example2]
